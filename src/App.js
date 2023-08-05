@@ -1,20 +1,17 @@
-import SearchBar from "./Components/SearchBar";
-import { FaGithub } from "react-icons/fa";
+import React from "react";
+import Home from "./Home";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import UserDetail from "./UserDetail";
 
 const App = () => {
   return (
-    <div className="app">
-      <div className="header">
-        <div>
-          <h3>Search Github User App</h3>
-        </div>
-        <div className="title-underline"></div>
-        <div className="app-image-container">
-          <FaGithub className="app-image" />
-        </div>
-      </div>
-      <SearchBar />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/:loginID" element={<UserDetail />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 

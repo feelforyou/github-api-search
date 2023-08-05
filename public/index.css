@@ -283,6 +283,7 @@ ul {
   height: auto;
   border-radius: 50%;
   color: var(--primary-900);
+
   
 
 }
@@ -370,11 +371,108 @@ ul {
   font-weight: 500;
   font-size: 1.2rem;
 }
+.card-img-container{
+  height: 80%;
+  width: 100%;
+  overflow: hidden;
+  
+}
 
 .card-img {
-  transition: transform 0.3s ease-in-out; /* Animate the transform properties */
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out; 
+  /* Animate the transform properties */
 }
 
 .card-img:hover {
-  transform: scale(1.02); /* Scale the image up to 110% when hovered */
+  transform: scale(1.2); /* Scale the image up to 110% when hovered */
 }
+/*############# USERDETAIL PAGE ##################*/
+.userdetail-container{
+  padding: 2rem;
+
+}
+.userdetail-container h1{
+  text-align: center;
+  margin-top: 1rem;
+}
+.userdetail-container h2{
+  color: var(--primary-400);
+}
+.userdetail-article   {
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  overflow: hidden;
+  
+}
+.userdetail-section{
+  margin-top: 1.5rem;
+}
+@media  screen and (min-width:670px) {
+  .userdetail-section{
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .userdetail-article{
+    background-color: transparent;
+    border: 1px solid var(--grey-400);
+    border-radius: 5px;
+  }
+  
+}
+.userdetail-img{
+  width: 100%;
+  max-width: 320px;
+  max-width: 320px;
+  margin-top: 2rem;
+  border: 1px green solid;
+}
+.userdetail-link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid var(--primary-900);
+  color: var(--primary-900);
+  padding: 0.5rem;
+  border-radius: 5px;
+
+}
+.userdetail-link:hover {
+    color: whitesmoke;  /* or any other property */
+    background-color: var(--primary-900);
+    transition: var(--transition);
+}
+.userdetail-info{
+  color: var(--primary-900);
+  margin-top: 1rem;
+  
+  
+}
+@media screen and (min-width:670px){
+  .userdetail-info{
+    margin-top: 0rem;
+  }
+}
+.userdetail-url{
+  margin-top: 0.5rem;
+}
+.userdetail-url a{
+  
+  color: var(--primary-700);
+  
+}
+.userdetail-url a:hover{
+  transition: var(--transition);
+  color: var(--primary-600);
+  
+}
+
+
+

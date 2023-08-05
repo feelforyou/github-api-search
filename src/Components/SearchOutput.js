@@ -1,30 +1,28 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SearchOutput = ({ users }) => {
   return (
     <div className="card-container">
       {users.map((user) => {
         const { html_url, avatar_url, login, id } = user;
+
         return (
-          <div className="card" key={id}>
-            <a
-              className="link"
-              href={html_url}
-              rel="noreferrer"
-              target="_blank"
-            >
+          <Link to={`/${login}`}>
+            <div className="card" key={id}>
               <p className="login">{login}</p>
-            </a>
-            <a href={html_url} rel="noreferrer" target="_blank">
-              <img
-                className="card-img"
-                src={avatar_url}
-                alt="user avatar"
-                height="250px"
-                width="250px"
-              />
-            </a>
-          </div>
+
+              <div className="card-img-container">
+                <img
+                  className="card-img"
+                  src={avatar_url}
+                  alt="user avatar"
+                  height="250px"
+                  width="250px"
+                />
+              </div>
+            </div>
+          </Link>
         );
       })}
     </div>
