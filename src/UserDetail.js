@@ -26,12 +26,12 @@ const UserDetail = () => {
   useEffect(() => {
     fetchUserData();
   }, [loginID]);
-  console.log(userData);
   if (loading) {
     return <Loading />;
   }
   return (
     <div className="userdetail-container">
+      {console.log(userData)}
       <Link className="userdetail-link " to={"/"}>
         Back to Home
       </Link>
