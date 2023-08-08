@@ -429,7 +429,7 @@ ul {
   max-width: 320px;
   max-width: 320px;
   margin-top: 2rem;
-  border: 1px green solid;
+  
 }
 .userdetail-link{
   display: flex;
@@ -474,5 +474,18 @@ ul {
   
 }
 
+.userdetail-follow{
+  color: var(--grey-500);
+  margin-top: 0.5rem;
+  padding: 0.25rem;
+  
+}
+.userdetail-follow span{
+  margin-left: 0.5rem;
+}
+.userdetail-icon{
+  font-size: 0.9rem;
+  margin-right: 0.25rem;
+}
 
 

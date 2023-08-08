@@ -1,18 +1,25 @@
-import { hover } from "@testing-library/user-event/dist/hover";
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { AiFillLike } from "react-icons/ai";
+import { FcLike } from "react-icons/fc";
+import Loading from "./Components/Loading";
 
 const UserDetail = () => {
   const [userData, setUserData] = useState({});
+  const [loading, setLoading] = useState(true);
+
   const { loginID } = useParams();
 
   const fetchUserData = async () => {
     try {
+      setLoading(true);
       const response = await fetch(`https://api.github.com/users/${loginID}`);
       const data = await response.json();
       setUserData(data);
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
 
@@ -20,7 +27,9 @@ const UserDetail = () => {
     fetchUserData();
   }, [loginID]);
   console.log(userData);
-
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <div className="userdetail-container">
       <Link className="userdetail-link " to={"/"}>
@@ -39,9 +48,21 @@ const UserDetail = () => {
         <article className="userdetail-info">
           <h3>public repos: {userData?.public_repos}</h3>
           <p className="userdetail-url">
-            <a target="_Blank" href={userData?.html_url}>
+            <a
+              rel="noopener noreferrer"
+              target="_Blank"
+              href={userData?.html_url}
+            >
               {userData?.html_url}
             </a>
+          </p>
+          <p className="userdetail-follow">
+            <AiFillLike className="userdetail-icon" />
+            following: {userData?.following || 0}
+            <span>
+              <FcLike className="userdetail-icon" />
+              followers: {userData?.followers || 0}
+            </span>
           </p>
         </article>
       </section>
